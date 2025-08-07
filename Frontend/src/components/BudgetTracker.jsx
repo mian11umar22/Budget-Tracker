@@ -6,13 +6,13 @@ import TransactionList from "./TransactionList";
 import Summary from "./Summary";
 import CategoryChart from "./CategoryChart";
 
-// 🌐 Set base URL once here
+ 
 const BASE_URL = "https://budget-tracker-f623.onrender.com";
 
 export default function BudgetTracker() {
   const [transactions, setTransactions] = useState([]);
 
-  // Fetch all
+ 
   const fetchTransactions = async () => {
     try {
       const res = await axios.get(`${BASE_URL}/api/transactions`);
@@ -26,7 +26,7 @@ export default function BudgetTracker() {
     fetchTransactions();
   }, []);
 
-  // Add new
+ 
   const addTransaction = async (transaction) => {
     try {
       const res = await axios.post(
