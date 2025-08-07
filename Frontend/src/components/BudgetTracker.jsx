@@ -6,13 +6,16 @@ import TransactionList from "./TransactionList";
 import Summary from "./Summary";
 import CategoryChart from "./CategoryChart";
 
+// 🌐 Set base URL once here
+const BASE_URL = "https://budget-tracker-f623.onrender.com";
+
 export default function BudgetTracker() {
   const [transactions, setTransactions] = useState([]);
 
   // Fetch all
   const fetchTransactions = async () => {
     try {
-      const res = await axios.get("http://localhost:3000/api/transactions");
+      const res = await axios.get(`${BASE_URL}/api/transactions`);
       setTransactions(res.data);
     } catch (err) {
       toast.error("Failed to fetch transactions");
@@ -27,7 +30,7 @@ export default function BudgetTracker() {
   const addTransaction = async (transaction) => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/create/transactions",
+        `${BASE_URL}/api/create/transactions`,
         transaction
       );
       setTransactions((prev) => [...prev, res.data.newTransaction]);
@@ -40,7 +43,7 @@ export default function BudgetTracker() {
   // Delete
   const deleteTransaction = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/api/transactions/${id}`);
+      await axios.delete(`${BASE_URL}/api/transactions/${id}`);
       setTransactions((prev) => prev.filter((tx) => tx.id !== id));
       toast.success("Transaction deleted");
     } catch (err) {
@@ -57,7 +60,6 @@ export default function BudgetTracker() {
 
         <Summary transactions={transactions} />
 
-        {/* Responsive grid: full width on mobile, 2 columns on md+ */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <TransactionForm onAdd={addTransaction} />
           <CategoryChart transactions={transactions} />
