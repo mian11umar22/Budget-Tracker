@@ -14,7 +14,7 @@ exports.getTransactions = (req, res) => {
 exports.createTransaction = (req, res) => {
   try {
     const { title, amount, type, category } = req.body;
-console.log("REQ BODY:", req.body);
+// console.log("REQ BODY:", req.body);
 
     if (!title || typeof title !== "string") {
       return res
