@@ -33,7 +33,7 @@ export default function TransactionForm({ onAdd }) {
         <span className="text-xl">➕</span> Add Transaction
       </h2>
 
-      {/* Title */}
+      
       <div className="flex flex-col">
         <label className="text-sm font-medium text-gray-700 mb-1">
           Transaction Title
@@ -47,7 +47,7 @@ export default function TransactionForm({ onAdd }) {
         />
       </div>
 
-      {/* Amount */}
+   
       <div className="flex flex-col">
         <label className="text-sm font-medium text-gray-700 mb-1">Amount</label>
         <div className="flex items-center bg-gray-50 border border-gray-300 rounded-md px-3">
@@ -61,8 +61,7 @@ export default function TransactionForm({ onAdd }) {
           />
         </div>
       </div>
-
-      {/* Category */}
+ 
       <div className="flex flex-col">
         <label className="text-sm font-medium text-gray-700 mb-1">
           Category
@@ -79,7 +78,7 @@ export default function TransactionForm({ onAdd }) {
         </div>
       </div>
 
-      {/* Transaction Type */}
+     
       <div className="flex flex-col">
         <label className="text-sm font-medium text-gray-700 mb-2">
           Transaction Type
@@ -112,7 +111,7 @@ export default function TransactionForm({ onAdd }) {
         </div>
       </div>
 
-      {/* Submit Button */}
+    
       <button
         type="submit"
         className="w-full py-2 rounded-lg text-sm font-semibold text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-600 hover:to-blue-600 transition"

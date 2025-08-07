@@ -75,7 +75,7 @@ const CategoryChart = ({ transactions }) => {
             <Pie data={data} options={options} />
           </div>
 
-          {/* Category Breakdown Table */}
+        
           <div className="space-y-2">
             <h3 className="text-sm font-semibold text-gray-700">
               Top Categories

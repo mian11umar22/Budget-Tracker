@@ -30,7 +30,7 @@ export default function TransactionList({
                 key={tx.id}
                 className="bg-gray-50 p-4 rounded-lg border flex flex-col md:flex-row md:items-center md:justify-between gap-4"
               >
-                {/* Left Info Block */}
+              
                 <div className="flex flex-col gap-2">
                   <div className="flex items-center gap-2">
                     <h3 className="font-semibold text-lg text-gray-800">
